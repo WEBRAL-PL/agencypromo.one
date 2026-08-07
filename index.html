@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>agencypromo.one — marketing dla firm lokalnych | Kraków, Małopolska, Śląsk</title>
-<meta name="description" content="Agencja marketingowa dla firm lokalnych. Zdobywamy klientów, którzy płacą — nie lajki i zasięgi. Wizytówki Google, kampanie reklamowe, strony www. Kraków, Małopolska, Śląsk. Pracujemy u Ciebie w firmie.">
+<title>agencypromo.one — marketing dla firm lokalnych | Małopolska i Śląsk</title>
+<meta name="description" content="Agencja marketingowa dla firm lokalnych. Zdobywamy klientów, którzy płacą — nie lajki i zasięgi. Wizytówki Google, kampanie reklamowe, strony www. Małopolska i Śląsk. Pracujemy u Ciebie w firmie.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,7 +36,6 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  html.smooth{scroll-behavior:auto}
   body{
     font-family:var(--font-body);
     background:var(--bg);
@@ -57,10 +56,6 @@
     content:"";position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.06;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
   }
-
-  /* smooth-scroll shell */
-  html.smooth #content{position:fixed;top:0;left:0;width:100%;will-change:transform}
-  #spacer{width:1px}
 
   .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 
@@ -257,13 +252,11 @@
   .step h3{margin-bottom:10px;color:var(--ink)}
   .step p{font-size:15px;color:var(--ink-soft)}
   .step .tag{display:block;margin-top:16px;font-size:13px;font-weight:700;color:var(--amber-deep)}
-  .process-quote{
-    margin-top:52px;background:var(--ink);color:var(--paper);border-radius:var(--radius);
-    padding:38px 42px;display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;
+  .process-punch{
+    margin-top:52px;font-family:var(--font-display);font-weight:600;
+    font-size:clamp(20px,2.6vw,26px);max-width:820px;color:var(--ink);
   }
-  .process-quote .mark{font-family:var(--font-display);font-size:52px;font-weight:800;color:var(--amber);line-height:.8;flex:none}
-  .process-quote p{font-family:var(--font-display);font-weight:500;font-size:clamp(18px,2.2vw,23px);line-height:1.4;max-width:760px;color:var(--paper)}
-  .process-quote strong{color:var(--amber-soft);font-weight:600}
+  .process-punch em{font-style:normal;color:var(--green)}
 
   /* ---------- services (dark) ---------- */
   .services{background:var(--bg)}
@@ -304,77 +297,51 @@
   }
   .svc-feature li::before{content:"✓";color:var(--amber);font-weight:800;flex:none}
 
-  /* ---------- values (deep green) ---------- */
+  /* ---------- values (deep green, card grid) ---------- */
   .values{background:var(--green-deep)}
   .values .eyebrow{color:var(--amber-soft)}
-  .values-count{display:none}
-  .val-no{display:none}
-  .values-grid .section-head{margin-bottom:40px}
-  .values-right{display:grid;gap:0;border-top:1px solid rgba(243,239,228,.16)}
+  .vals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:960px){.vals-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.vals-grid{grid-template-columns:1fr}}
   .val{
-    display:grid;grid-template-columns:minmax(200px,320px) 1fr;gap:30px;
-    padding:34px 6px;border-bottom:1px solid rgba(243,239,228,.16);align-items:baseline;
+    background:rgba(243,239,228,.05);border:1px solid rgba(243,239,228,.15);border-radius:var(--radius);
+    padding:30px 28px;display:flex;flex-direction:column;gap:13px;
+    transition:transform .25s,border-color .25s,background .25s;
   }
-  @media(max-width:700px){.val{grid-template-columns:1fr;gap:10px;padding:28px 2px}}
-  .val h3{font-size:clamp(20px,2.4vw,25px);font-weight:700;color:var(--cream)}
-  .val h3 .dot{color:var(--amber)}
-  .val p{color:rgba(243,239,228,.7);font-size:16px;max-width:620px}
-
-  .values.pinned{padding:0}
-  .values.pinned .values-track{position:relative}
-  .values.pinned .values-stage{
-    height:100vh;display:flex;align-items:center;overflow:hidden;will-change:transform;
-  }
-  .values.pinned .values-grid{
-    display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center;width:100%;
-  }
-  .values.pinned .values-grid .section-head{margin-bottom:0}
-  .values.pinned .values-count{
-    display:block;margin-top:34px;font-family:var(--font-display);font-weight:700;
-    font-size:15px;letter-spacing:.08em;color:rgba(243,239,228,.55);
-  }
-  .values.pinned .values-count b{color:var(--amber);font-size:34px;letter-spacing:0}
-  .values.pinned .values-bar{
-    margin-top:14px;width:180px;height:2px;background:rgba(243,239,228,.2);position:relative;overflow:hidden;border-radius:99px;
-  }
-  .values.pinned .values-bar i{
-    position:absolute;inset:0;background:var(--amber);transform-origin:left;transform:scaleX(0);display:block;
-  }
-  .values.pinned .values-right{position:relative;border-top:none;display:block;height:340px}
-  .values.pinned .val{
-    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;
-    padding:0;border-bottom:none;
-    opacity:0;transform:translateY(46px);pointer-events:none;
-    transition:opacity .5s var(--ease-out),transform .5s var(--ease-out);
-  }
-  .values.pinned .val.active{opacity:1;transform:translateY(0);pointer-events:auto}
-  .values.pinned .val.passed{opacity:0;transform:translateY(-46px)}
-  .values.pinned .val-no{
+  .val:hover{transform:translateY(-3px);border-color:rgba(242,169,59,.5);background:rgba(243,239,228,.08)}
+  .val-no{
     display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
     color:var(--amber);background:rgba(242,169,59,.13);border-radius:99px;padding:6px 14px;width:max-content;
   }
-  .values.pinned .val h3{font-size:clamp(28px,3.4vw,44px)}
-  .values.pinned .val p{font-size:17px}
+  .val h3{font-size:clamp(20px,2.2vw,24px);font-weight:700;color:var(--cream)}
+  .val h3 .dot{color:var(--amber)}
+  .val p{color:rgba(243,239,228,.7);font-size:15px}
 
-  /* ---------- audit (AMBER block) ---------- */
-  .audit{background:linear-gradient(160deg,var(--amber) 0%,var(--amber-deep) 100%);color:var(--ink);position:relative;overflow:hidden}
+  /* ---------- coop (AMBER block) ---------- */
+  .coop{background:linear-gradient(160deg,var(--amber) 0%,var(--amber-deep) 100%);color:var(--ink);position:relative;overflow:hidden}
   .ring{position:absolute;border-radius:50%;border:1.5px solid rgba(22,35,27,.2);pointer-events:none}
   .ring-1{width:520px;height:520px;right:-160px;top:-160px}
   .ring-2{width:320px;height:320px;right:-60px;top:-60px;border-color:rgba(22,35,27,.14)}
   .ring-3{width:220px;height:220px;left:-80px;bottom:-100px;border-color:rgba(22,35,27,.12)}
-  .audit-inner{position:relative;z-index:1;max-width:760px}
-  .audit .eyebrow{color:var(--ink)}
-  .audit .eyebrow::before{background:var(--ink)}
-  .audit h2{color:var(--ink);margin-bottom:20px}
-  .audit .lede{color:rgba(22,35,27,.75);margin-bottom:20px}
-  .audit-how{list-style:none;display:grid;gap:12px;margin:30px 0 40px;max-width:620px}
-  .audit-how li{display:flex;gap:14px;align-items:flex-start;font-size:16px;color:rgba(22,35,27,.85);font-weight:600}
-  .audit-how li::before{content:"→";color:var(--ink);font-weight:800;flex:none}
-  .audit .btn-primary{background:var(--ink);color:var(--cream);box-shadow:0 12px 30px rgba(22,35,27,.3)}
-  .audit .btn-primary:hover{background:var(--green-deep);box-shadow:0 16px 36px rgba(22,35,27,.35)}
-  .audit .btn-ghost{color:var(--ink);border-color:rgba(22,35,27,.4)}
-  .audit .btn-ghost:hover{border-color:var(--ink)}
-  .audit-note{margin-top:18px;font-size:14px;color:rgba(22,35,27,.6)}
+  .coop-inner{position:relative;z-index:1;max-width:800px}
+  .coop .eyebrow{color:var(--ink)}
+  .coop .eyebrow::before{background:var(--ink)}
+  .coop h2{color:var(--ink);margin-bottom:20px}
+  .coop .lede{color:rgba(22,35,27,.75);margin-bottom:10px}
+  .coop-big{
+    display:inline-block;margin:26px 0 8px;background:var(--ink);color:var(--cream);
+    font-family:var(--font-display);font-weight:700;font-size:clamp(20px,2.7vw,30px);line-height:1.25;
+    padding:20px 28px;border-radius:var(--radius);max-width:680px;
+  }
+  .coop-big em{font-style:normal;color:var(--amber)}
+  .coop-how{list-style:none;display:grid;gap:12px;margin:30px 0 40px;max-width:680px}
+  .coop-how li{display:flex;gap:14px;align-items:flex-start;font-size:16px;color:rgba(22,35,27,.85);font-weight:600}
+  .coop-how li::before{content:"→";color:var(--ink);font-weight:800;flex:none}
+  .coop .btn-primary{background:var(--ink);color:var(--cream);box-shadow:0 12px 30px rgba(22,35,27,.3)}
+  .coop .btn-primary:hover{background:var(--green-deep);box-shadow:0 16px 36px rgba(22,35,27,.35)}
+  .coop .btn-ghost{color:var(--ink);border-color:rgba(22,35,27,.4)}
+  .coop .btn-ghost:hover{border-color:var(--ink)}
+  .coop-note{margin-top:18px;font-size:14px;color:rgba(22,35,27,.65)}
 
   /* ---------- contact (dark) ---------- */
   .contact{background:var(--bg)}
@@ -445,7 +412,7 @@
       <li><a href="#jak-pracujemy">Jak pracujemy</a></li>
       <li><a href="#co-robimy">Co robimy</a></li>
       <li><a href="#zasady">Zasady</a></li>
-      <li><a href="#audyt">Darmowy audyt</a></li>
+      <li><a href="#wspolpraca">Współpraca</a></li>
       <li><a href="#kontakt" class="nav-cta" data-magnetic>Kontakt</a></li>
     </ul>
   </div>
@@ -456,9 +423,9 @@
 <header class="hero">
   <canvas class="hero-canvas" id="heroCanvas" data-parallax="0.18" aria-hidden="true"></canvas>
   <div class="wrap">
-    <span class="eyebrow reveal">Marketing dla firm lokalnych · Kraków i okolice</span>
+    <span class="eyebrow reveal">Marketing dla firm lokalnych · Małopolska i Śląsk</span>
     <h1 id="heroH1">
-      <span class="w"><span class="wi">Nie</span></span> <span class="w"><span class="wi">sprzedajemy</span></span> <span class="w"><span class="wi">Ci</span></span> <span class="w"><span class="wi"><span class="strike-word" id="strikeWord">lajków</span>.</span></span><br>
+      <span class="w"><span class="wi">Nie</span></span> <span class="w"><span class="wi">sprzedajemy</span></span> <span class="w"><span class="wi">Ci</span></span> <span class="w"><span class="wi"><span class="strike-word" id="strikeWord">obietnic</span>.</span></span><br>
       <span class="w"><span class="wi">Zdobywamy</span></span> <span class="win" id="winWord"><span class="w"><span class="wi">klientów,</span></span> <span class="w"><span class="wi">którzy</span></span> <span class="w"><span class="wi">płacą</span></span></span><span class="w"><span class="wi">.</span></span>
     </h1>
     <p class="lede reveal reveal-d2">
@@ -467,12 +434,12 @@
       Bez ściemy, bez pustych obietnic.
     </p>
     <div class="cta-row reveal reveal-d3">
-      <a href="#audyt" class="btn btn-primary" data-magnetic><span class="btn-label">Zamów bezpłatny audyt</span></a>
+      <a href="#kontakt" class="btn btn-primary" data-magnetic><span class="btn-label">Spotkaj się z nami</span></a>
       <a href="#jak-pracujemy" class="btn btn-ghost" data-magnetic><span class="btn-label">Zobacz, jak pracujemy</span></a>
     </div>
     <p class="hero-note reveal reveal-d3">
       <strong>Pracujemy na miejscu, u Ciebie w firmie</strong>
-      <span class="sep">·</span> Kraków <span class="sep">·</span> Małopolska <span class="sep">·</span> Śląsk
+      <span class="sep">·</span> Małopolska <span class="sep">·</span> Śląsk
     </p>
   </div>
   <div class="hero-scroll" aria-hidden="true">scroll</div>
@@ -548,13 +515,10 @@
         <span class="tag">decyzje na podstawie liczb</span>
       </div>
     </div>
-    <div data-parallax="-0.06">
-      <div class="process-quote reveal">
-        <span class="mark">„</span>
-        <p>Wydaliśmy 10 tysięcy na reklamę, wróciło 20. To skalujemy. Coś nie zarabia? Wyłączamy.
-        <strong>Tak wygląda marketing, kiedy wszystko jest mierzone.</strong></p>
-      </div>
-    </div>
+    <p class="process-punch reveal">
+      Cztery kroki i żadnej magii: <em>słuchamy, planujemy, wdrażamy i liczymy.</em>
+      To, co przynosi Ci klientów — rozwijamy. To, co nie zarabia — wyłączamy.
+    </p>
   </div>
 </section>
 
@@ -568,117 +532,123 @@
       <div class="svc svc-feature reveal">
         <div>
           <span class="flag">Nasza specjalność</span>
-          <h3>Wizytówka Google</h3>
-          <p>Według nas jedno z najbardziej niedocenianych narzędzi marketingu lokalnego. Kiedy klient szuka usługi w okolicy, to właśnie wizytówka decyduje, do kogo zadzwoni. Dbamy też o Bing i Apple Maps — klienci są wszędzie.</p>
+          <h3>Firmy lokalne</h3>
+          <p>Nie robimy „marketingu dla wszystkich”. Specjalizujemy się w firmach, które sprzedają swoje produkty i usługi lokalnie — w swoim mieście i okolicy: usługi, handel, rzemiosło, budowlanka, gabinety, warsztaty.</p>
         </div>
         <ul>
-          <li>Optymalizacja profilu: czytelnie, konkretnie, tak żeby budził zaufanie</li>
-          <li>Opinie od klientów — zdobywanie i odpowiadanie</li>
-          <li>Zdjęcia firmy, zespołu i realizacji</li>
-          <li>Pozycja w wynikach lokalnych „usługa + miasto”</li>
+          <li>Wiemy, jak szuka klient lokalny — i ustawiamy Twoją firmę tam, gdzie on patrzy</li>
+          <li>Znamy teren: Małopolska i Śląsk, pracujemy u Ciebie na miejscu</li>
+          <li>Narzędzia i budżety dobrane do skali lokalnego biznesu, nie korporacji</li>
+          <li>Marketing w internecie i poza nim — od Google po baner przy drodze</li>
         </ul>
       </div>
       <div class="svc reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Wizytówka Google</h3>
+        <p>Jedno z najbardziej niedocenianych narzędzi marketingu lokalnego — to ona decyduje, do kogo zadzwoni klient szukający „usługa + miasto”. Dbamy też o Bing i Apple Maps.</p>
+      </div>
+      <div class="svc reveal reveal-d1">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
         <h3>Kampanie reklamowe</h3>
         <p>Google i Meta — reklamy, które przynoszą zweryfikowane zapytania od ludzi gotowych kupić, nie puste leady do kolekcji.</p>
       </div>
-      <div class="svc reveal reveal-d1">
+      <div class="svc reveal reveal-d2">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2m8-2v2"/></svg></div>
         <h3>Strony internetowe</h3>
         <p>Strona, która sprzedaje, a nie tylko „jest”. Szybka, czytelna i kompletna od strony prawnej: polityka prywatności, regulamin, ciasteczka.</p>
       </div>
-      <div class="svc reveal reveal-d2">
+      <div class="svc reveal">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
         <h3>Identyfikacja i materiały</h3>
         <p>Logo, ulotki, wizytówki, zdjęcia zespołu i miejsca pracy. Spójny wizerunek — prawdziwy, zgodny z tym, jaka Twoja firma jest naprawdę.</p>
       </div>
-      <div class="svc reveal">
+      <div class="svc reveal reveal-d1">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <h3>Marketing lokalny i klasyczny</h3>
         <p>Banery, billboardy, sponsoring miejscowych organizacji, konkursy, współprace z innymi firmami. W terenie lokalnym to wciąż działa — jeśli jest przemyślane.</p>
       </div>
-      <div class="svc reveal reveal-d1">
+      <div class="svc reveal reveal-d2">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M4 15l4-6 4 3 4-7 4 6"/></svg></div>
         <h3>Treści, artykuły i SEO</h3>
         <p>Artykuły na portalach lokalnych, teksty pod wyszukiwarkę, YouTube. Treści, które budują zaufanie u Twojego klienta — nie virale dla zasięgu.</p>
       </div>
-      <div class="svc reveal reveal-d2">
+      <div class="svc reveal">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
         <h3>Ścieżka klienta</h3>
         <p>SMS-y, powiadomienia, przypomnienia — projektujemy całą drogę od pierwszego kontaktu do zakupu i polecenia, dopasowaną do Twojego biznesu.</p>
+      </div>
+      <div class="svc reveal reveal-d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Audyt incognito</h3>
+        <p>W ramach współpracy wcielamy się w Twojego klienta: szukamy firmy w Google, dzwonimy, odwiedzamy sklep albo zamawiamy usługę. Rejestrujemy całą ścieżkę i pokazujemy, co po drodze gubi klientów — punkt po punkcie.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section values" id="zasady">
-  <div class="values-track" id="valuesTrack">
-    <div class="values-stage" id="valuesStage">
-      <div class="wrap values-grid">
-        <div class="section-head">
-          <span class="eyebrow reveal">Zasady, których się trzymamy</span>
-          <h2 class="split">Umawiamy się uczciwie<br>albo wcale.</h2>
-          <div class="values-count"><b id="valCount">01</b> / 06</div>
-          <div class="values-bar"><i id="valBar"></i></div>
-        </div>
-        <div class="values-right" id="valuesRight">
-          <div class="val reveal">
-            <span class="val-no">Zasada 01</span>
-            <h3>Mówimy, jak jest<span class="dot">.</span></h3>
-            <p>Bez marketingowych sztuczek i pustych bonusów doklejanych, żeby tylko sprzedać usługę. Jeśli coś nie ma sensu dla Twojej firmy — usłyszysz to od nas wprost, razem z ceną.</p>
-          </div>
-          <div class="val reveal">
-            <span class="val-no">Zasada 02</span>
-            <h3>Celem jest sprzedaż<span class="dot">.</span></h3>
-            <p>Nie zasięgi, nie followersi, nie lajki. Marketing ma się przekładać na zapytania, klientów i wynik finansowy — i z tego się rozliczamy.</p>
-          </div>
-          <div class="val reveal">
-            <span class="val-no">Zasada 03</span>
-            <h3>Wszystko mierzymy<span class="dot">.</span></h3>
-            <p>Skoro wszystko jest policzone, od razu widać wąskie gardła — i wiadomo, co naprawiać, a co skalować. Ty masz pełny wgląd w to, co się dzieje, bez ingerowania w swój czas.</p>
-          </div>
-          <div class="val reveal">
-            <span class="val-no">Zasada 04</span>
-            <h3>Nie testujemy na Tobie<span class="dot">.</span></h3>
-            <p>Pracujemy na sprawdzonych rozwiązaniach, narzędziach i procesach. Tam, gdzie testy są potrzebne, robimy je świadomie i za Twoją wiedzą.</p>
-          </div>
-          <div class="val reveal">
-            <span class="val-no">Zasada 05</span>
-            <h3>Zgodnie z prawem<span class="dot">.</span></h3>
-            <p>RODO, polityka prywatności, regulaminy, ciasteczka — cały prawny aspekt marketingu robimy porządnie, zgodnie z przepisami UE. Śpisz spokojnie.</p>
-          </div>
-          <div class="val reveal">
-            <span class="val-no">Zasada 06</span>
-            <h3>Jesteśmy na miejscu<span class="dot">.</span></h3>
-            <p>Kraków, Małopolska, Śląsk. Przyjeżdżamy do firmy, poznajemy ludzi i miejsce. Marketing lokalny robi się lepiej, kiedy zna się teren.</p>
-          </div>
-        </div>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Zasady, których się trzymamy</span>
+      <h2 class="split">Umawiamy się uczciwie<br>albo wcale.</h2>
+    </div>
+    <div class="vals-grid">
+      <div class="val reveal">
+        <span class="val-no">Zasada 01</span>
+        <h3>Mówimy, jak jest<span class="dot">.</span></h3>
+        <p>Bez marketingowych sztuczek i pustych bonusów doklejanych, żeby tylko sprzedać usługę. Jeśli coś nie ma sensu dla Twojej firmy — usłyszysz to od nas wprost, razem z ceną.</p>
+      </div>
+      <div class="val reveal reveal-d1">
+        <span class="val-no">Zasada 02</span>
+        <h3>Celem jest sprzedaż<span class="dot">.</span></h3>
+        <p>Nie zasięgi, nie followersi, nie lajki. Marketing ma się przekładać na zapytania, klientów i wynik finansowy — i z tego się rozliczamy.</p>
+      </div>
+      <div class="val reveal reveal-d2">
+        <span class="val-no">Zasada 03</span>
+        <h3>Wszystko mierzymy<span class="dot">.</span></h3>
+        <p>Skoro wszystko jest policzone, od razu widać wąskie gardła — i wiadomo, co naprawiać, a co skalować. Ty masz pełny wgląd w to, co się dzieje.</p>
+      </div>
+      <div class="val reveal">
+        <span class="val-no">Zasada 04</span>
+        <h3>Nie testujemy na Tobie<span class="dot">.</span></h3>
+        <p>Pracujemy na sprawdzonych rozwiązaniach, narzędziach i procesach. Tam, gdzie testy są potrzebne, robimy je świadomie i za Twoją wiedzą.</p>
+      </div>
+      <div class="val reveal reveal-d1">
+        <span class="val-no">Zasada 05</span>
+        <h3>Zgodnie z prawem<span class="dot">.</span></h3>
+        <p>RODO, polityka prywatności, regulaminy, ciasteczka — cały prawny aspekt marketingu robimy porządnie, zgodnie z przepisami UE. Śpisz spokojnie.</p>
+      </div>
+      <div class="val reveal reveal-d2">
+        <span class="val-no">Zasada 06</span>
+        <h3>Jesteśmy na miejscu<span class="dot">.</span></h3>
+        <p>Małopolska i Śląsk. Przyjeżdżamy do firmy, poznajemy ludzi i miejsce. Marketing lokalny robi się lepiej, kiedy zna się teren.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section audit" id="audyt">
+<section class="section coop" id="wspolpraca">
   <div class="ring ring-1" data-parallax="0.1"></div>
   <div class="ring ring-2" data-parallax="0.2"></div>
   <div class="ring ring-3" data-parallax="-0.12"></div>
-  <div class="wrap audit-inner">
-    <span class="eyebrow reveal">Bezpłatny audyt</span>
-    <h2 class="split">Sprawdzimy Twoją firmę incognito.</h2>
+  <div class="wrap coop-inner">
+    <span class="eyebrow reveal">Jak wygląda współpraca</span>
+    <h2 class="split">Współpraca, która<br>szanuje Twój czas.</h2>
     <p class="lede reveal reveal-d1">
-      Zanim cokolwiek zaproponujemy, przechodzimy drogę Twojego klienta — tak jak on, bez zapowiedzi.
+      Dobry marketing nie może być dla Ciebie drugim etatem. Układamy współpracę tak, żeby firma rosła, a Ty mógł robić swoje.
     </p>
-    <ul class="audit-how">
-      <li class="reveal reveal-d1">Szukamy Twojej firmy w Google, tak jak zrobiłby to klient z okolicy</li>
-      <li class="reveal reveal-d2">Sprawdzamy wizytówkę, stronę, opinie i to, jak łatwo się z Tobą skontaktować</li>
-      <li class="reveal reveal-d2">Pokazujemy Ci, gdzie po drodze gubisz klientów — konkretnie, punkt po punkcie</li>
+    <div class="coop-big reveal reveal-d1">Prowadzimy wszystko tak, żeby Twoje zaangażowanie było <em>minimalne albo zerowe</em> — Ty decydujesz w kluczowych momentach, resztą zajmujemy się my.</div>
+    <ul class="coop-how">
+      <li class="reveal reveal-d1">Bez umów lojalnościowych — współpracę możesz zakończyć w każdej chwili. Mamy Cię trzymać efektami, nie paragrafami.</li>
+      <li class="reveal reveal-d2">Zasady ustalamy jasno na starcie — obie strony wiedzą, na czym stoją i za co odpowiadają.</li>
+      <li class="reveal reveal-d2">Proces i narzędzia dopasowujemy do Twojej firmy — nie odwrotnie.</li>
+      <li class="reveal reveal-d3">Zależy nam na efektach i długiej współpracy, z której obie strony są zadowolone — inaczej nie ma ona sensu.</li>
     </ul>
     <div class="cta-row reveal reveal-d3">
       <a href="tel:+48690300995" class="btn btn-primary" data-magnetic><span class="btn-label">Zadzwoń: 690 300 995</span></a>
-      <a href="mailto:kontakt@agencypromo.one?subject=Bezp%C5%82atny%20audyt%20firmy" class="btn btn-ghost" data-magnetic><span class="btn-label">Napisz maila</span></a>
+      <a href="mailto:kontakt@agencypromo.one?subject=Wsp%C3%B3%C5%82praca" class="btn btn-ghost" data-magnetic><span class="btn-label">Napisz maila</span></a>
     </div>
-    <p class="audit-note reveal reveal-d3">Audyt jest bezpłatny i do niczego nie zobowiązuje. Najwyżej dowiesz się czegoś o swojej firmie.</p>
+    <p class="coop-note reveal reveal-d3">Pierwsza rozmowa do niczego nie zobowiązuje. Poznajemy Twoją firmę, mówimy, co widzimy — a Ty decydujesz, czy idziemy dalej.</p>
   </div>
 </section>
 
@@ -691,8 +661,6 @@
         <div class="area reveal reveal-d1">
           <h3>Gdzie działamy</h3>
           <div class="area-tags">
-            <span class="area-tag">Kraków</span>
-            <span class="area-tag">okolice Krakowa</span>
             <span class="area-tag">Małopolska</span>
             <span class="area-tag">Śląsk</span>
           </div>
@@ -723,23 +691,19 @@
 </footer>
 
 </main>
-<div id="spacer" aria-hidden="true"></div>
 
 <script>
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(pointer: fine)').matches;
   const desktop = finePointer && innerWidth > 900;
-  const SMOOTH = !reduced && desktop;
+  const EFFECTS = !reduced && desktop;
 
-  const content = document.getElementById('content');
-  const spacer = document.getElementById('spacer');
   const nav = document.getElementById('nav');
   const intro = document.getElementById('intro');
   const heroH1 = document.getElementById('heroH1');
 
-  let cur = window.scrollY, target = window.scrollY, vh = innerHeight;
-  let velocity = 0;
+  let cur = window.scrollY, vh = innerHeight;
 
   /* ---------- split section headings into chars ---------- */
   document.querySelectorAll('h2.split').forEach(h2 => {
@@ -765,42 +729,14 @@
     [...h2.querySelectorAll('.c')].forEach((c, i) => c.style.transitionDelay = (i * 0.02) + 's');
   });
 
-  /* ---------- smooth scroll shell ---------- */
-  function measureDoc(){
-    if (!SMOOTH) return;
-    spacer.style.height = content.scrollHeight + 'px';
-  }
-  if (SMOOTH) {
-    document.documentElement.classList.add('smooth');
-    measureDoc();
-    new ResizeObserver(measureDoc).observe(content);
-  }
-
   /* ---------- measured registries (document-space positions) ---------- */
-  let reveals = [], parallaxEls = [], pin = null;
-  const valuesSection = document.querySelector('.values');
-  const track = document.getElementById('valuesTrack');
-  const stage = document.getElementById('valuesStage');
-  const vals = [...document.querySelectorAll('.val')];
-  const valCount = document.getElementById('valCount');
-  const valBar = document.getElementById('valBar');
-  const PIN = SMOOTH; // pinned "zasady" only on desktop with motion
-
-  if (PIN) {
-    valuesSection.classList.add('pinned');
-    vals.forEach(v => v.classList.remove('reveal','in'));
-    vals[0].classList.add('active');
-  }
+  let reveals = [], parallaxEls = [];
 
   function docTop(el){
     return el.getBoundingClientRect().top + cur;
   }
   function measureAll(){
     vh = innerHeight;
-    if (PIN) {
-      track.style.height = Math.round(vh + vals.length * vh * 0.62) + 'px';
-      measureDoc();
-    }
     reveals = [...document.querySelectorAll('.reveal:not(.in), h2.split:not(.in)')].map(el => ({el, top: docTop(el)}));
     parallaxEls = [...document.querySelectorAll('[data-parallax]')].map(el => {
       const prev = el.style.transform; el.style.transform = '';
@@ -809,11 +745,9 @@
       el.style.transform = prev;
       return {el, mid, f: parseFloat(el.dataset.parallax)};
     });
-    pin = PIN ? {top: docTop(track), range: track.offsetHeight - vh} : null;
   }
 
-  /* ---------- reveal / parallax / pin driven by rendered scroll ---------- */
-  let pinIdx = 0;
+  /* ---------- reveal / parallax driven by rendered scroll ---------- */
   function applyScrollEffects(){
     for (let i = reveals.length - 1; i >= 0; i--) {
       const r = reveals[i];
@@ -828,36 +762,11 @@
         p.el.style.transform = 'translate3d(0,' + ty.toFixed(2) + 'px,0)';
       }
     }
-    if (pin) {
-      const y = Math.min(Math.max(cur - pin.top, 0), pin.range);
-      stage.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)';
-      const progress = pin.range ? y / pin.range : 0;
-      const idx = Math.min(vals.length - 1, Math.floor(progress * vals.length));
-      if (idx !== pinIdx) {
-        vals.forEach((v, i) => {
-          v.classList.toggle('active', i === idx);
-          v.classList.toggle('passed', i < idx);
-        });
-        valCount.textContent = String(idx + 1).padStart(2, '0');
-        pinIdx = idx;
-      }
-      valBar.style.transform = 'scaleX(' + progress.toFixed(3) + ')';
-    }
   }
 
   /* ---------- main loop ---------- */
   function raf(){
-    target = window.scrollY;
-    if (SMOOTH) {
-      const prev = cur;
-      cur += (target - cur) * 0.09;
-      if (Math.abs(target - cur) < 0.05) cur = target;
-      velocity = cur - prev;
-      const skew = Math.max(-1.4, Math.min(1.4, velocity * 0.012));
-      content.style.transform = 'translate3d(0,' + (-cur).toFixed(2) + 'px,0) skewY(' + skew.toFixed(3) + 'deg)';
-    } else {
-      cur = target;
-    }
+    cur = window.scrollY;
     nav.classList.toggle('scrolled', cur > 10);
     applyScrollEffects();
     cursorFrame();
@@ -874,15 +783,14 @@
       if (!toTop && !el) return;
       e.preventDefault();
       const top = toTop ? 0 : docTop(el) - 70;
-      if (SMOOTH) window.scrollTo(0, top);
-      else window.scrollTo({top, behavior: reduced ? 'auto' : 'smooth'});
+      window.scrollTo({top, behavior: reduced ? 'auto' : 'smooth'});
     });
   });
 
   /* ---------- custom cursor ---------- */
   const dot = document.getElementById('curDot'), ring = document.getElementById('curRing');
   let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my, cursorOn = false;
-  if (SMOOTH) {
+  if (EFFECTS) {
     document.documentElement.classList.add('cur-on');
     cursorOn = true;
     addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, {passive:true});
@@ -902,7 +810,7 @@
   }
 
   /* ---------- magnetic buttons ---------- */
-  if (SMOOTH) {
+  if (EFFECTS) {
     document.querySelectorAll('[data-magnetic]').forEach(el => {
       const label = el.querySelector('.btn-label');
       el.addEventListener('mousemove', e => {
@@ -970,7 +878,7 @@
   /* ---------- hero word reveal + rotator ---------- */
   const strikeEl = document.getElementById('strikeWord');
   const winEl = document.getElementById('winWord');
-  const words = ['lajków','zasięgów','wyświetleń','obietnic'];
+  const words = ['obietnic','ściemy','bajek','lania wody'];
   function startHero(){
     heroH1.classList.add('go');
     [...heroH1.querySelectorAll('.wi')].forEach((w, i) => w.style.transitionDelay = (i * 0.055) + 's');
@@ -1031,8 +939,8 @@
   }
 
   addEventListener('resize', () => { sizeCanvas(); measureAll(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measureDoc(); measureAll(); });
-  addEventListener('load', () => { measureDoc(); measureAll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureAll);
+  addEventListener('load', measureAll);
 
   runIntro();
   requestAnimationFrame(raf);
