@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>agencypromo.one — marketing dla firm lokalnych | Kraków, Małopolska, Śląsk</title>
+<meta name="description" content="Agencja marketingowa dla firm lokalnych. Zdobywamy klientów, którzy płacą — nie lajki i zasięgi. Wizytówki Google, kampanie reklamowe, strony www. Kraków, Małopolska, Śląsk. Pracujemy u Ciebie w firmie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1712;
+    --bg-2:#0B120E;
+    --card:#17251D;
+    --card-hi:#1D2F25;
+    --cream:#F3EFE4;
+    --cream-dim:rgba(243,239,228,.66);
+    --cream-faint:rgba(243,239,228,.4);
+    --ink:#16231B;
+    --ink-soft:#3D4A42;
+    --paper:#F3EFE4;
+    --green:#17513A;
+    --green-deep:#0E3826;
+    --green-bright:#3E9E6B;
+    --green-soft:#8ED0AC;
+    --amber:#F2A93B;
+    --amber-soft:#F5C77E;
+    --amber-deep:#C9821F;
+    --line:rgba(243,239,228,.13);
+    --line-ink:rgba(22,35,27,.13);
+    --radius:18px;
+    --font-display:"Bricolage Grotesque",sans-serif;
+    --font-body:"Manrope",sans-serif;
+    --ease-out:cubic-bezier(.22,1,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html.smooth{scroll-behavior:auto}
+  body{
+    font-family:var(--font-body);
+    background:var(--bg);
+    color:var(--cream);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--amber);color:var(--ink)}
+  ::-webkit-scrollbar{width:11px}
+  ::-webkit-scrollbar-track{background:var(--bg-2)}
+  ::-webkit-scrollbar-thumb{background:#26382E;border-radius:99px;border:3px solid var(--bg-2)}
+  ::-webkit-scrollbar-thumb:hover{background:var(--amber-deep)}
+
+  /* film grain */
+  body::after{
+    content:"";position:fixed;inset:0;z-index:900;pointer-events:none;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  /* smooth-scroll shell */
+  html.smooth #content{position:fixed;top:0;left:0;width:100%;will-change:transform}
+  #spacer{width:1px}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  h1,h2,h3{font-family:var(--font-display);line-height:1.08;letter-spacing:-.01em;color:var(--cream)}
+  h2{font-size:clamp(30px,4.5vw,50px);font-weight:700}
+  h3{font-size:21px;font-weight:600;line-height:1.25}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green-bright);flex:none}
+
+  .lede{font-size:clamp(17px,2vw,19.5px);color:var(--cream-dim);max-width:640px}
+
+  /* ---------- intro ---------- */
+  .intro{
+    position:fixed;inset:0;z-index:999;background:var(--amber);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .8s cubic-bezier(.76,0,.24,1);
+  }
+  .intro.leave{transform:translateY(-101%)}
+  .intro-logo{
+    font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;
+    font-size:clamp(34px,6vw,64px);color:var(--ink);display:flex;
+  }
+  .intro-logo em{font-style:normal}
+  .intro-logo .idot{color:var(--paper)}
+  .intro .w{display:inline-block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+  .intro .wi{display:inline-block;transform:translateY(120%);transition:transform .7s var(--ease-out)}
+  .intro.go .wi{transform:translateY(0)}
+  html.intro-lock{overflow:hidden}
+
+  /* ---------- custom cursor ---------- */
+  html.cur-on, html.cur-on a, html.cur-on button, html.cur-on .btn{cursor:none}
+  .cur-dot,.cur-ring{
+    position:fixed;top:0;left:0;pointer-events:none;z-index:1001;border-radius:50%;
+    opacity:0;transition:opacity .3s;
+  }
+  html.cur-on .cur-dot,html.cur-on .cur-ring{opacity:1}
+  .cur-dot{width:7px;height:7px;background:var(--amber);margin:-3.5px 0 0 -3.5px}
+  .cur-ring{
+    width:38px;height:38px;border:1.5px solid rgba(243,239,228,.4);margin:-19px 0 0 -19px;
+    transition:opacity .3s,width .25s,height .25s,margin .25s,border-color .25s,background .25s;
+  }
+  .cur-ring.big{width:64px;height:64px;margin:-32px 0 0 -32px;border-color:var(--amber);background:rgba(242,169,59,.14)}
+
+  /* ---------- split text ---------- */
+  .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.13em;margin-bottom:-.13em}
+  .wi{display:inline-block;transform:translateY(118%);will-change:transform}
+  .go .wi{transform:translateY(0);transition:transform .85s var(--ease-out)}
+  .split .c{display:inline-block;transform:translateY(115%);will-change:transform}
+  .split.in .c{transform:translateY(0);transition:transform .7s var(--ease-out)}
+  @media(prefers-reduced-motion:reduce){
+    .wi,.split .c{transform:none!important;transition:none!important}
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .3s,box-shadow .3s,transform .45s var(--ease-out);
+  }
+  .nav.scrolled{background:rgba(11,18,14,.82);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--font-display);font-weight:800;font-size:21px;color:var(--cream);text-decoration:none;letter-spacing:-.02em}
+  .logo em{font-style:normal;color:var(--green-bright)}
+  .logo .dot{color:var(--amber)}
+  .nav-links{display:flex;gap:30px;align-items:center;list-style:none}
+  .nav-links a{color:var(--cream);text-decoration:none;font-size:14.5px;font-weight:600;opacity:.72;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{
+    background:var(--amber);color:var(--ink)!important;opacity:1!important;
+    padding:10px 20px;border-radius:99px;transition:background .2s!important;
+  }
+  .nav-cta:hover{background:var(--amber-soft)}
+  @media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:170px 0 90px;position:relative;overflow:hidden;background:var(--bg)}
+  .hero-canvas{position:absolute;inset:-10% 0;z-index:0;pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{
+    font-size:clamp(40px,6.6vw,76px);font-weight:800;letter-spacing:-.025em;
+    max-width:900px;margin-bottom:28px;color:var(--cream);
+  }
+  .strike-word{
+    position:relative;display:inline-block;color:var(--cream-faint);white-space:nowrap;
+  }
+  .strike-word::after{
+    content:"";position:absolute;left:-2%;top:54%;height:.09em;width:104%;
+    background:var(--amber);border-radius:99px;
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform .45s cubic-bezier(.7,0,.3,1);
+  }
+  .strike-word.struck::after{transform:scaleX(1)}
+  .strike-word.leaving{opacity:0;transition:opacity .25s}
+  .hero .win{color:var(--amber);position:relative;display:inline-block}
+  .hero .win::after{
+    content:"";position:absolute;left:0;bottom:.02em;height:.08em;width:100%;
+    background:var(--green-bright);border-radius:99px;
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform .6s cubic-bezier(.7,0,.3,1) .2s;
+  }
+  .hero .win.on::after{transform:scaleX(1)}
+  .hero .lede{margin-bottom:38px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-body);font-weight:700;font-size:16px;
+    padding:16px 30px;border-radius:99px;text-decoration:none;
+    transition:box-shadow .2s,background .2s,border-color .2s,color .2s;cursor:pointer;border:none;
+    will-change:transform;
+  }
+  .btn-label{display:inline-block;will-change:transform}
+  .btn-primary{background:var(--amber);color:var(--ink);box-shadow:0 10px 30px rgba(242,169,59,.22)}
+  .btn-primary:hover{background:var(--amber-soft);box-shadow:0 14px 36px rgba(242,169,59,.3)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(243,239,228,.28)}
+  .btn-ghost:hover{border-color:var(--cream)}
+  .hero-note{margin-top:26px;font-size:14.5px;color:var(--cream-dim);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .hero-note strong{color:var(--cream)}
+  .hero-note .sep{color:var(--amber)}
+  .hero-scroll{
+    position:absolute;right:24px;bottom:26px;z-index:1;
+    font-size:11.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-faint);
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero-scroll::after{
+    content:"";width:1.5px;height:38px;background:linear-gradient(var(--amber),transparent);
+    animation:scrollhint 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollhint{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  @media(max-width:820px){.hero-scroll{display:none}}
+
+  /* ---------- ticker ---------- */
+  .ticker{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:16px 0;overflow:hidden;background:var(--bg-2);
+  }
+  .ticker-track{display:flex;gap:0;width:max-content;animation:tick 36s linear infinite}
+  .ticker span{
+    font-family:var(--font-display);font-weight:600;font-size:14.5px;letter-spacing:.02em;
+    color:var(--cream-dim);padding:0 26px;white-space:nowrap;position:relative;
+  }
+  .ticker span::after{content:"·";position:absolute;right:-4px;color:var(--amber);font-weight:800}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+  /* ---------- sections ---------- */
+  .section{padding:110px 0}
+  .section-head{max-width:720px;margin-bottom:60px}
+  .section-head .lede{margin-top:18px}
+
+  /* ---------- problems (dark) ---------- */
+  .problems{background:var(--bg)}
+  .prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:760px){.prob-grid{grid-template-columns:1fr}}
+  .prob{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 32px;display:flex;gap:18px;align-items:flex-start;
+    transition:transform .25s,border-color .25s,background .25s;
+  }
+  .prob:hover{transform:translateY(-3px);border-color:rgba(242,169,59,.4);background:var(--card-hi)}
+  .prob-q{
+    font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--amber);
+    line-height:1;flex:none;margin-top:3px;
+  }
+  .prob p{color:var(--cream-dim);font-size:16px}
+  .prob strong{color:var(--cream);display:block;font-size:17.5px;margin-bottom:5px;font-family:var(--font-display);font-weight:600}
+  .prob-punch{margin-top:44px;font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.6vw,26px);max-width:760px;color:var(--cream)}
+  .prob-punch em{font-style:normal;color:var(--amber)}
+
+  /* ---------- process (LIGHT section for rhythm) ---------- */
+  .process{background:var(--paper);overflow:hidden;color:var(--ink)}
+  .process h2{color:var(--ink)}
+  .process .eyebrow{color:var(--green)}
+  .process .eyebrow::before{background:var(--amber)}
+  .process .lede{color:var(--ink-soft)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+  @media(max-width:960px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.steps{grid-template-columns:1fr}}
+  .step{
+    background:#fff;border:1px solid var(--line-ink);border-radius:var(--radius);
+    padding:30px 26px 32px;position:relative;overflow:hidden;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .step:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(22,35,27,.1)}
+  .step::before{
+    counter-increment:step;content:"krok " counter(step);
+    display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green);background:rgba(23,81,58,.08);border-radius:99px;
+    padding:5px 12px;margin-bottom:18px;
+  }
+  .step h3{margin-bottom:10px;color:var(--ink)}
+  .step p{font-size:15px;color:var(--ink-soft)}
+  .step .tag{display:block;margin-top:16px;font-size:13px;font-weight:700;color:var(--amber-deep)}
+  .process-quote{
+    margin-top:52px;background:var(--ink);color:var(--paper);border-radius:var(--radius);
+    padding:38px 42px;display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;
+  }
+  .process-quote .mark{font-family:var(--font-display);font-size:52px;font-weight:800;color:var(--amber);line-height:.8;flex:none}
+  .process-quote p{font-family:var(--font-display);font-weight:500;font-size:clamp(18px,2.2vw,23px);line-height:1.4;max-width:760px;color:var(--paper)}
+  .process-quote strong{color:var(--amber-soft);font-weight:600}
+
+  /* ---------- services (dark) ---------- */
+  .services{background:var(--bg)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
+  .svc{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 28px;transition:transform .25s,border-color .25s,background .25s;
+  }
+  .svc:hover{transform:translateY(-3px);border-color:rgba(242,169,59,.4);background:var(--card-hi)}
+  .svc h3{margin-bottom:10px;color:var(--cream)}
+  .svc p{font-size:15px;color:var(--cream-dim)}
+  .svc-icon{
+    width:44px;height:44px;border-radius:12px;background:rgba(62,158,107,.16);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    color:var(--green-soft);
+  }
+  .svc-icon svg{width:22px;height:22px}
+  .svc-feature{
+    grid-column:span 3;background:linear-gradient(135deg,var(--green) 0%,var(--green-deep) 100%);
+    color:#fff;border:1px solid rgba(62,158,107,.35);
+    display:grid;grid-template-columns:1.2fr 1fr;gap:40px;padding:44px 46px;align-items:center;
+  }
+  @media(max-width:960px){.svc-feature{grid-column:span 2;grid-template-columns:1fr}}
+  @media(max-width:620px){.svc-feature{grid-column:span 1}}
+  .svc-feature:hover{transform:none;background:linear-gradient(135deg,var(--green) 0%,var(--green-deep) 100%)}
+  .svc-feature .flag{
+    display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--amber);color:var(--ink);border-radius:99px;padding:6px 14px;margin-bottom:18px;
+  }
+  .svc-feature h3{font-size:clamp(24px,3vw,32px);font-weight:700;margin-bottom:14px}
+  .svc-feature p{color:rgba(255,255,255,.82);font-size:16px}
+  .svc-feature ul{list-style:none;display:grid;gap:12px}
+  .svc-feature li{
+    display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.07);border-radius:12px;padding:13px 16px;
+  }
+  .svc-feature li::before{content:"✓";color:var(--amber);font-weight:800;flex:none}
+
+  /* ---------- values (deep green) ---------- */
+  .values{background:var(--green-deep)}
+  .values .eyebrow{color:var(--amber-soft)}
+  .values-count{display:none}
+  .val-no{display:none}
+  .values-grid .section-head{margin-bottom:40px}
+  .values-right{display:grid;gap:0;border-top:1px solid rgba(243,239,228,.16)}
+  .val{
+    display:grid;grid-template-columns:minmax(200px,320px) 1fr;gap:30px;
+    padding:34px 6px;border-bottom:1px solid rgba(243,239,228,.16);align-items:baseline;
+  }
+  @media(max-width:700px){.val{grid-template-columns:1fr;gap:10px;padding:28px 2px}}
+  .val h3{font-size:clamp(20px,2.4vw,25px);font-weight:700;color:var(--cream)}
+  .val h3 .dot{color:var(--amber)}
+  .val p{color:rgba(243,239,228,.7);font-size:16px;max-width:620px}
+
+  .values.pinned{padding:0}
+  .values.pinned .values-track{position:relative}
+  .values.pinned .values-stage{
+    height:100vh;display:flex;align-items:center;overflow:hidden;will-change:transform;
+  }
+  .values.pinned .values-grid{
+    display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center;width:100%;
+  }
+  .values.pinned .values-grid .section-head{margin-bottom:0}
+  .values.pinned .values-count{
+    display:block;margin-top:34px;font-family:var(--font-display);font-weight:700;
+    font-size:15px;letter-spacing:.08em;color:rgba(243,239,228,.55);
+  }
+  .values.pinned .values-count b{color:var(--amber);font-size:34px;letter-spacing:0}
+  .values.pinned .values-bar{
+    margin-top:14px;width:180px;height:2px;background:rgba(243,239,228,.2);position:relative;overflow:hidden;border-radius:99px;
+  }
+  .values.pinned .values-bar i{
+    position:absolute;inset:0;background:var(--amber);transform-origin:left;transform:scaleX(0);display:block;
+  }
+  .values.pinned .values-right{position:relative;border-top:none;display:block;height:340px}
+  .values.pinned .val{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;
+    padding:0;border-bottom:none;
+    opacity:0;transform:translateY(46px);pointer-events:none;
+    transition:opacity .5s var(--ease-out),transform .5s var(--ease-out);
+  }
+  .values.pinned .val.active{opacity:1;transform:translateY(0);pointer-events:auto}
+  .values.pinned .val.passed{opacity:0;transform:translateY(-46px)}
+  .values.pinned .val-no{
+    display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber);background:rgba(242,169,59,.13);border-radius:99px;padding:6px 14px;width:max-content;
+  }
+  .values.pinned .val h3{font-size:clamp(28px,3.4vw,44px)}
+  .values.pinned .val p{font-size:17px}
+
+  /* ---------- audit (AMBER block) ---------- */
+  .audit{background:linear-gradient(160deg,var(--amber) 0%,var(--amber-deep) 100%);color:var(--ink);position:relative;overflow:hidden}
+  .ring{position:absolute;border-radius:50%;border:1.5px solid rgba(22,35,27,.2);pointer-events:none}
+  .ring-1{width:520px;height:520px;right:-160px;top:-160px}
+  .ring-2{width:320px;height:320px;right:-60px;top:-60px;border-color:rgba(22,35,27,.14)}
+  .ring-3{width:220px;height:220px;left:-80px;bottom:-100px;border-color:rgba(22,35,27,.12)}
+  .audit-inner{position:relative;z-index:1;max-width:760px}
+  .audit .eyebrow{color:var(--ink)}
+  .audit .eyebrow::before{background:var(--ink)}
+  .audit h2{color:var(--ink);margin-bottom:20px}
+  .audit .lede{color:rgba(22,35,27,.75);margin-bottom:20px}
+  .audit-how{list-style:none;display:grid;gap:12px;margin:30px 0 40px;max-width:620px}
+  .audit-how li{display:flex;gap:14px;align-items:flex-start;font-size:16px;color:rgba(22,35,27,.85);font-weight:600}
+  .audit-how li::before{content:"→";color:var(--ink);font-weight:800;flex:none}
+  .audit .btn-primary{background:var(--ink);color:var(--cream);box-shadow:0 12px 30px rgba(22,35,27,.3)}
+  .audit .btn-primary:hover{background:var(--green-deep);box-shadow:0 16px 36px rgba(22,35,27,.35)}
+  .audit .btn-ghost{color:var(--ink);border-color:rgba(22,35,27,.4)}
+  .audit .btn-ghost:hover{border-color:var(--ink)}
+  .audit-note{margin-top:18px;font-size:14px;color:rgba(22,35,27,.6)}
+
+  /* ---------- contact (dark) ---------- */
+  .contact{background:var(--bg)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+  .contact-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:36px;display:grid;gap:8px;transition:border-color .25s;
+  }
+  .contact-card:hover{border-color:rgba(242,169,59,.4)}
+  .contact-card + .contact-card{margin-top:16px}
+  .contact-card .label{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+  .contact-card a{
+    font-family:var(--font-display);font-weight:700;font-size:clamp(22px,2.8vw,30px);
+    color:var(--cream);text-decoration:none;letter-spacing:-.01em;transition:color .2s;word-break:break-word;
+  }
+  .contact-card a:hover{color:var(--amber)}
+  .contact-card p{font-size:14.5px;color:var(--cream-dim)}
+  .area{margin-top:34px}
+  .area h3{margin-bottom:14px;color:var(--cream)}
+  .area-tags{display:flex;flex-wrap:wrap;gap:10px}
+  .area-tag{
+    font-size:14px;font-weight:700;padding:9px 18px;border-radius:99px;
+    background:rgba(62,158,107,.16);color:var(--green-soft);
+  }
+  .area p{margin-top:16px;font-size:15px;color:var(--cream-dim);max-width:460px}
+
+  /* ---------- footer ---------- */
+  .footer{background:var(--bg-2);border-top:1px solid var(--line);color:var(--cream-faint);padding:44px 0;font-size:14px}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .footer .logo{color:var(--cream);font-size:18px}
+  .footer .logo em{color:var(--green-bright)}
+  .footer-legal{max-width:480px;line-height:1.5}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-d1{transition-delay:.08s}
+  .reveal-d2{transition-delay:.16s}
+  .reveal-d3{transition-delay:.24s}
+  .no-anim,.no-anim *{transition:none!important}
+  [data-parallax]{will-change:transform}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .strike-word::after,.hero .win::after{transition:none}
+    .hero-scroll::after{animation:none}
+    .intro{display:none}
+  }
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<div class="cur-dot" id="curDot" aria-hidden="true"></div>
+<div class="cur-ring" id="curRing" aria-hidden="true"></div>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-logo">
+    <span class="w"><span class="wi">agency</span></span><span class="w"><span class="wi"><em>promo</em></span></span><span class="w"><span class="wi"><span class="idot">.</span></span></span><span class="w"><span class="wi"><em>one</em></span></span>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo" data-anchor="top">agency<em>promo</em><span class="dot">.</span><em>one</em></a>
+    <ul class="nav-links">
+      <li><a href="#jak-pracujemy">Jak pracujemy</a></li>
+      <li><a href="#co-robimy">Co robimy</a></li>
+      <li><a href="#zasady">Zasady</a></li>
+      <li><a href="#audyt">Darmowy audyt</a></li>
+      <li><a href="#kontakt" class="nav-cta" data-magnetic>Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="content">
+
+<header class="hero">
+  <canvas class="hero-canvas" id="heroCanvas" data-parallax="0.18" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow reveal">Marketing dla firm lokalnych · Kraków i okolice</span>
+    <h1 id="heroH1">
+      <span class="w"><span class="wi">Nie</span></span> <span class="w"><span class="wi">sprzedajemy</span></span> <span class="w"><span class="wi">Ci</span></span> <span class="w"><span class="wi"><span class="strike-word" id="strikeWord">lajków</span>.</span></span><br>
+      <span class="w"><span class="wi">Zdobywamy</span></span> <span class="win" id="winWord"><span class="w"><span class="wi">klientów,</span></span> <span class="w"><span class="wi">którzy</span></span> <span class="w"><span class="wi">płacą</span></span></span><span class="w"><span class="wi">.</span></span>
+    </h1>
+    <p class="lede reveal reveal-d2">
+      Prowadzisz firmę lokalną i chcesz, żeby dzwonił telefon — nie żeby rosły słupki wyświetleń.
+      Robimy marketing, który da się policzyć: od wizytówki Google po całą ścieżkę klienta.
+      Bez ściemy, bez pustych obietnic.
+    </p>
+    <div class="cta-row reveal reveal-d3">
+      <a href="#audyt" class="btn btn-primary" data-magnetic><span class="btn-label">Zamów bezpłatny audyt</span></a>
+      <a href="#jak-pracujemy" class="btn btn-ghost" data-magnetic><span class="btn-label">Zobacz, jak pracujemy</span></a>
+    </div>
+    <p class="hero-note reveal reveal-d3">
+      <strong>Pracujemy na miejscu, u Ciebie w firmie</strong>
+      <span class="sep">·</span> Kraków <span class="sep">·</span> Małopolska <span class="sep">·</span> Śląsk
+    </p>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">scroll</div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span>wizytówki Google</span><span>kampanie reklamowe</span><span>strony internetowe</span><span>ścieżka klienta</span><span>identyfikacja wizualna</span><span>banery i billboardy</span><span>sponsoring lokalny</span><span>artykuły i SEO</span><span>RODO i regulaminy</span><span>pomiar wyników</span>
+  </div>
+</div>
+
+<section class="section problems">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Brzmi znajomo?</span>
+      <h2 class="split">Dobra robota to za mało,<br>jeśli klienci o Tobie nie wiedzą.</h2>
+    </div>
+    <div class="prob-grid">
+      <div class="prob reveal">
+        <span class="prob-q">?</span>
+        <p><strong>Konkurencja jest w Google, a Ciebie nie widać.</strong>
+        Klient szuka „usługa + miasto”, znajduje trzy firmy — i żadna z nich to nie Ty.</p>
+      </div>
+      <div class="prob reveal reveal-d1">
+        <span class="prob-q">?</span>
+        <p><strong>Płacisz za reklamę i nie wiesz, co z niej masz.</strong>
+        Raporty pełne wykresów, a w kalendarzu bez zmian. Nikt nie mówi wprost, co działa, a co nie.</p>
+      </div>
+      <div class="prob reveal reveal-d2">
+        <span class="prob-q">?</span>
+        <p><strong>Zadowoleni klienci są — ale nikt o nich nie wie.</strong>
+        Dobre opinie, polecenia z ust do ust. Tylko w internecie tego nie widać, więc nowy klient wybiera kogoś innego.</p>
+      </div>
+      <div class="prob reveal reveal-d3">
+        <span class="prob-q">?</span>
+        <p><strong>Nie masz czasu na marketing.</strong>
+        Prowadzisz firmę, obsługujesz klientów, ogarniasz zespół. Media społecznościowe i reklamy to ostatnia rzecz, na którą starcza dnia.</p>
+      </div>
+    </div>
+    <p class="prob-punch reveal">
+      Znamy to, bo sami jesteśmy klientami firm lokalnych.
+      <em>Wiemy, co przekonuje nas do wyboru firmy — i to samo ustawiamy w Twoim marketingu.</em>
+    </p>
+  </div>
+</section>
+
+<section class="section process" id="jak-pracujemy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Jak pracujemy</span>
+      <h2 class="split">Najpierw poznajemy firmę.<br>Potem robimy marketing.</h2>
+      <p class="lede reveal reveal-d1">Nie ma dwóch takich samych firm, więc nie ma u nas gotowych pakietów wciskanych każdemu. Jest sprawdzony proces, który dopasowujemy do Twojego biznesu i możliwości.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Poznajemy Twoją firmę</h3>
+        <p>Spotykamy się na miejscu, u Ciebie. Pytamy o obecną sytuację, cele, wcześniejsze próby z marketingiem i o to, co Cię do niego zniechęca.</p>
+        <span class="tag">brief + rozmowa na żywo</span>
+      </div>
+      <div class="step reveal reveal-d1">
+        <h3>Układamy plan</h3>
+        <p>Określamy, kim jest Twój idealny klient i co go blokuje przed zakupem. Dobieramy kanały i ofertę do Twojego budżetu — nie odwrotnie.</p>
+        <span class="tag">strategia dopasowana do firmy</span>
+      </div>
+      <div class="step reveal reveal-d2">
+        <h3>Wdrażamy i zdobywamy klientów</h3>
+        <p>Wizytówka Google, kampanie, strona, treści — plus cała ścieżka klienta: SMS-y, powiadomienia, przypomnienia. Klient nie ginie po pierwszym kontakcie.</p>
+        <span class="tag">sprawdzone procesy i narzędzia</span>
+      </div>
+      <div class="step reveal reveal-d3">
+        <h3>Mierzymy i poprawiamy</h3>
+        <p>Każda złotówka jest policzona. Widzimy, gdzie ucieka klient, naprawiamy wąskie gardła i skalujemy to, co przynosi zwrot.</p>
+        <span class="tag">decyzje na podstawie liczb</span>
+      </div>
+    </div>
+    <div data-parallax="-0.06">
+      <div class="process-quote reveal">
+        <span class="mark">„</span>
+        <p>Wydaliśmy 10 tysięcy na reklamę, wróciło 20. To skalujemy. Coś nie zarabia? Wyłączamy.
+        <strong>Tak wygląda marketing, kiedy wszystko jest mierzone.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="co-robimy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Co robimy</span>
+      <h2 class="split">Wszystko, czego firma lokalna<br>potrzebuje, żeby zdobywać klientów.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc svc-feature reveal">
+        <div>
+          <span class="flag">Nasza specjalność</span>
+          <h3>Wizytówka Google</h3>
+          <p>Według nas jedno z najbardziej niedocenianych narzędzi marketingu lokalnego. Kiedy klient szuka usługi w okolicy, to właśnie wizytówka decyduje, do kogo zadzwoni. Dbamy też o Bing i Apple Maps — klienci są wszędzie.</p>
+        </div>
+        <ul>
+          <li>Optymalizacja profilu: czytelnie, konkretnie, tak żeby budził zaufanie</li>
+          <li>Opinie od klientów — zdobywanie i odpowiadanie</li>
+          <li>Zdjęcia firmy, zespołu i realizacji</li>
+          <li>Pozycja w wynikach lokalnych „usługa + miasto”</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
+        <h3>Kampanie reklamowe</h3>
+        <p>Google i Meta — reklamy, które przynoszą zweryfikowane zapytania od ludzi gotowych kupić, nie puste leady do kolekcji.</p>
+      </div>
+      <div class="svc reveal reveal-d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 18v2m8-2v2"/></svg></div>
+        <h3>Strony internetowe</h3>
+        <p>Strona, która sprzedaje, a nie tylko „jest”. Szybka, czytelna i kompletna od strony prawnej: polityka prywatności, regulamin, ciasteczka.</p>
+      </div>
+      <div class="svc reveal reveal-d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Identyfikacja i materiały</h3>
+        <p>Logo, ulotki, wizytówki, zdjęcia zespołu i miejsca pracy. Spójny wizerunek — prawdziwy, zgodny z tym, jaka Twoja firma jest naprawdę.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Marketing lokalny i klasyczny</h3>
+        <p>Banery, billboardy, sponsoring miejscowych organizacji, konkursy, współprace z innymi firmami. W terenie lokalnym to wciąż działa — jeśli jest przemyślane.</p>
+      </div>
+      <div class="svc reveal reveal-d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M4 15l4-6 4 3 4-7 4 6"/></svg></div>
+        <h3>Treści, artykuły i SEO</h3>
+        <p>Artykuły na portalach lokalnych, teksty pod wyszukiwarkę, YouTube. Treści, które budują zaufanie u Twojego klienta — nie virale dla zasięgu.</p>
+      </div>
+      <div class="svc reveal reveal-d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 6l8 6 8-6"/></svg></div>
+        <h3>Ścieżka klienta</h3>
+        <p>SMS-y, powiadomienia, przypomnienia — projektujemy całą drogę od pierwszego kontaktu do zakupu i polecenia, dopasowaną do Twojego biznesu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section values" id="zasady">
+  <div class="values-track" id="valuesTrack">
+    <div class="values-stage" id="valuesStage">
+      <div class="wrap values-grid">
+        <div class="section-head">
+          <span class="eyebrow reveal">Zasady, których się trzymamy</span>
+          <h2 class="split">Umawiamy się uczciwie<br>albo wcale.</h2>
+          <div class="values-count"><b id="valCount">01</b> / 06</div>
+          <div class="values-bar"><i id="valBar"></i></div>
+        </div>
+        <div class="values-right" id="valuesRight">
+          <div class="val reveal">
+            <span class="val-no">Zasada 01</span>
+            <h3>Mówimy, jak jest<span class="dot">.</span></h3>
+            <p>Bez marketingowych sztuczek i pustych bonusów doklejanych, żeby tylko sprzedać usługę. Jeśli coś nie ma sensu dla Twojej firmy — usłyszysz to od nas wprost, razem z ceną.</p>
+          </div>
+          <div class="val reveal">
+            <span class="val-no">Zasada 02</span>
+            <h3>Celem jest sprzedaż<span class="dot">.</span></h3>
+            <p>Nie zasięgi, nie followersi, nie lajki. Marketing ma się przekładać na zapytania, klientów i wynik finansowy — i z tego się rozliczamy.</p>
+          </div>
+          <div class="val reveal">
+            <span class="val-no">Zasada 03</span>
+            <h3>Wszystko mierzymy<span class="dot">.</span></h3>
+            <p>Skoro wszystko jest policzone, od razu widać wąskie gardła — i wiadomo, co naprawiać, a co skalować. Ty masz pełny wgląd w to, co się dzieje, bez ingerowania w swój czas.</p>
+          </div>
+          <div class="val reveal">
+            <span class="val-no">Zasada 04</span>
+            <h3>Nie testujemy na Tobie<span class="dot">.</span></h3>
+            <p>Pracujemy na sprawdzonych rozwiązaniach, narzędziach i procesach. Tam, gdzie testy są potrzebne, robimy je świadomie i za Twoją wiedzą.</p>
+          </div>
+          <div class="val reveal">
+            <span class="val-no">Zasada 05</span>
+            <h3>Zgodnie z prawem<span class="dot">.</span></h3>
+            <p>RODO, polityka prywatności, regulaminy, ciasteczka — cały prawny aspekt marketingu robimy porządnie, zgodnie z przepisami UE. Śpisz spokojnie.</p>
+          </div>
+          <div class="val reveal">
+            <span class="val-no">Zasada 06</span>
+            <h3>Jesteśmy na miejscu<span class="dot">.</span></h3>
+            <p>Kraków, Małopolska, Śląsk. Przyjeżdżamy do firmy, poznajemy ludzi i miejsce. Marketing lokalny robi się lepiej, kiedy zna się teren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section audit" id="audyt">
+  <div class="ring ring-1" data-parallax="0.1"></div>
+  <div class="ring ring-2" data-parallax="0.2"></div>
+  <div class="ring ring-3" data-parallax="-0.12"></div>
+  <div class="wrap audit-inner">
+    <span class="eyebrow reveal">Bezpłatny audyt</span>
+    <h2 class="split">Sprawdzimy Twoją firmę incognito.</h2>
+    <p class="lede reveal reveal-d1">
+      Zanim cokolwiek zaproponujemy, przechodzimy drogę Twojego klienta — tak jak on, bez zapowiedzi.
+    </p>
+    <ul class="audit-how">
+      <li class="reveal reveal-d1">Szukamy Twojej firmy w Google, tak jak zrobiłby to klient z okolicy</li>
+      <li class="reveal reveal-d2">Sprawdzamy wizytówkę, stronę, opinie i to, jak łatwo się z Tobą skontaktować</li>
+      <li class="reveal reveal-d2">Pokazujemy Ci, gdzie po drodze gubisz klientów — konkretnie, punkt po punkcie</li>
+    </ul>
+    <div class="cta-row reveal reveal-d3">
+      <a href="tel:+48690300995" class="btn btn-primary" data-magnetic><span class="btn-label">Zadzwoń: 690 300 995</span></a>
+      <a href="mailto:kontakt@agencypromo.one?subject=Bezp%C5%82atny%20audyt%20firmy" class="btn btn-ghost" data-magnetic><span class="btn-label">Napisz maila</span></a>
+    </div>
+    <p class="audit-note reveal reveal-d3">Audyt jest bezpłatny i do niczego nie zobowiązuje. Najwyżej dowiesz się czegoś o swojej firmie.</p>
+  </div>
+</section>
+
+<section class="section contact" id="kontakt">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow reveal">Kontakt</span>
+        <h2 class="split">Porozmawiajmy<br>o Twojej firmie.</h2>
+        <div class="area reveal reveal-d1">
+          <h3>Gdzie działamy</h3>
+          <div class="area-tags">
+            <span class="area-tag">Kraków</span>
+            <span class="area-tag">okolice Krakowa</span>
+            <span class="area-tag">Małopolska</span>
+            <span class="area-tag">Śląsk</span>
+          </div>
+          <p>Pracujemy bezpośrednio z klientem, na miejscu — przyjeżdżamy do Twojej firmy. Siedziba: Kraków.</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-card reveal reveal-d1">
+          <span class="label">Telefon</span>
+          <a href="tel:+48690300995">690 300 995</a>
+          <p>Odbieramy, a jak nie odbierzemy — oddzwaniamy.</p>
+        </div>
+        <div class="contact-card reveal reveal-d2">
+          <span class="label">E-mail</span>
+          <a href="mailto:kontakt@agencypromo.one">kontakt@agencypromo.one</a>
+          <p>Napisz dwa zdania o swojej firmie — odezwiemy się z konkretami.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="#" class="logo" data-anchor="top">agency<em>promo</em><span class="dot">.</span><em>one</em></a>
+    <p class="footer-legal">© 2026 agencypromo.one · Kraków. Marketing dla firm lokalnych — Małopolska i Śląsk.</p>
+  </div>
+</footer>
+
+</main>
+<div id="spacer" aria-hidden="true"></div>
+
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer: fine)').matches;
+  const desktop = finePointer && innerWidth > 900;
+  const SMOOTH = !reduced && desktop;
+
+  const content = document.getElementById('content');
+  const spacer = document.getElementById('spacer');
+  const nav = document.getElementById('nav');
+  const intro = document.getElementById('intro');
+  const heroH1 = document.getElementById('heroH1');
+
+  let cur = window.scrollY, target = window.scrollY, vh = innerHeight;
+  let velocity = 0;
+
+  /* ---------- split section headings into chars ---------- */
+  document.querySelectorAll('h2.split').forEach(h2 => {
+    const frag = document.createDocumentFragment();
+    [...h2.childNodes].forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent.split(' ').forEach((word, wi, arr) => {
+          if (!word) return;
+          const w = document.createElement('span'); w.className = 'w';
+          [...word].forEach(ch => {
+            const c = document.createElement('span'); c.className = 'c'; c.textContent = ch;
+            w.appendChild(c);
+          });
+          frag.appendChild(w);
+          if (wi < arr.length - 1) frag.appendChild(document.createTextNode(' '));
+        });
+      } else {
+        frag.appendChild(node.cloneNode(true));
+      }
+    });
+    h2.textContent = '';
+    h2.appendChild(frag);
+    [...h2.querySelectorAll('.c')].forEach((c, i) => c.style.transitionDelay = (i * 0.02) + 's');
+  });
+
+  /* ---------- smooth scroll shell ---------- */
+  function measureDoc(){
+    if (!SMOOTH) return;
+    spacer.style.height = content.scrollHeight + 'px';
+  }
+  if (SMOOTH) {
+    document.documentElement.classList.add('smooth');
+    measureDoc();
+    new ResizeObserver(measureDoc).observe(content);
+  }
+
+  /* ---------- measured registries (document-space positions) ---------- */
+  let reveals = [], parallaxEls = [], pin = null;
+  const valuesSection = document.querySelector('.values');
+  const track = document.getElementById('valuesTrack');
+  const stage = document.getElementById('valuesStage');
+  const vals = [...document.querySelectorAll('.val')];
+  const valCount = document.getElementById('valCount');
+  const valBar = document.getElementById('valBar');
+  const PIN = SMOOTH; // pinned "zasady" only on desktop with motion
+
+  if (PIN) {
+    valuesSection.classList.add('pinned');
+    vals.forEach(v => v.classList.remove('reveal','in'));
+    vals[0].classList.add('active');
+  }
+
+  function docTop(el){
+    return el.getBoundingClientRect().top + cur;
+  }
+  function measureAll(){
+    vh = innerHeight;
+    if (PIN) {
+      track.style.height = Math.round(vh + vals.length * vh * 0.62) + 'px';
+      measureDoc();
+    }
+    reveals = [...document.querySelectorAll('.reveal:not(.in), h2.split:not(.in)')].map(el => ({el, top: docTop(el)}));
+    parallaxEls = [...document.querySelectorAll('[data-parallax]')].map(el => {
+      const prev = el.style.transform; el.style.transform = '';
+      const r = el.getBoundingClientRect();
+      const mid = r.top + cur + r.height / 2;
+      el.style.transform = prev;
+      return {el, mid, f: parseFloat(el.dataset.parallax)};
+    });
+    pin = PIN ? {top: docTop(track), range: track.offsetHeight - vh} : null;
+  }
+
+  /* ---------- reveal / parallax / pin driven by rendered scroll ---------- */
+  let pinIdx = 0;
+  function applyScrollEffects(){
+    for (let i = reveals.length - 1; i >= 0; i--) {
+      const r = reveals[i];
+      if (r.top < cur + vh * 0.88) {
+        r.el.classList.add('in');
+        reveals.splice(i, 1);
+      }
+    }
+    if (!reduced) {
+      for (const p of parallaxEls) {
+        const ty = (cur + vh / 2 - p.mid) * p.f;
+        p.el.style.transform = 'translate3d(0,' + ty.toFixed(2) + 'px,0)';
+      }
+    }
+    if (pin) {
+      const y = Math.min(Math.max(cur - pin.top, 0), pin.range);
+      stage.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)';
+      const progress = pin.range ? y / pin.range : 0;
+      const idx = Math.min(vals.length - 1, Math.floor(progress * vals.length));
+      if (idx !== pinIdx) {
+        vals.forEach((v, i) => {
+          v.classList.toggle('active', i === idx);
+          v.classList.toggle('passed', i < idx);
+        });
+        valCount.textContent = String(idx + 1).padStart(2, '0');
+        pinIdx = idx;
+      }
+      valBar.style.transform = 'scaleX(' + progress.toFixed(3) + ')';
+    }
+  }
+
+  /* ---------- main loop ---------- */
+  function raf(){
+    target = window.scrollY;
+    if (SMOOTH) {
+      const prev = cur;
+      cur += (target - cur) * 0.09;
+      if (Math.abs(target - cur) < 0.05) cur = target;
+      velocity = cur - prev;
+      const skew = Math.max(-1.4, Math.min(1.4, velocity * 0.012));
+      content.style.transform = 'translate3d(0,' + (-cur).toFixed(2) + 'px,0) skewY(' + skew.toFixed(3) + 'deg)';
+    } else {
+      cur = target;
+    }
+    nav.classList.toggle('scrolled', cur > 10);
+    applyScrollEffects();
+    cursorFrame();
+    blobFrame();
+    requestAnimationFrame(raf);
+  }
+
+  /* ---------- anchors ---------- */
+  document.querySelectorAll('a[href^="#"], a[data-anchor]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      const toTop = a.dataset.anchor === 'top' || href === '#';
+      const el = toTop ? null : document.querySelector(href);
+      if (!toTop && !el) return;
+      e.preventDefault();
+      const top = toTop ? 0 : docTop(el) - 70;
+      if (SMOOTH) window.scrollTo(0, top);
+      else window.scrollTo({top, behavior: reduced ? 'auto' : 'smooth'});
+    });
+  });
+
+  /* ---------- custom cursor ---------- */
+  const dot = document.getElementById('curDot'), ring = document.getElementById('curRing');
+  let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my, cursorOn = false;
+  if (SMOOTH) {
+    document.documentElement.classList.add('cur-on');
+    cursorOn = true;
+    addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, {passive:true});
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest('a, button, .btn')) ring.classList.add('big');
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest('a, button, .btn')) ring.classList.remove('big');
+    });
+  }
+  function cursorFrame(){
+    if (!cursorOn) return;
+    rx += (mx - rx) * 0.16;
+    ry += (my - ry) * 0.16;
+    dot.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+    ring.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0)';
+  }
+
+  /* ---------- magnetic buttons ---------- */
+  if (SMOOTH) {
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+      const label = el.querySelector('.btn-label');
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
+        el.style.transform = 'translate(' + (dx*0.22).toFixed(1) + 'px,' + (dy*0.32).toFixed(1) + 'px)';
+        if (label) label.style.transform = 'translate(' + (dx*0.1).toFixed(1) + 'px,' + (dy*0.14).toFixed(1) + 'px)';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform .5s cubic-bezier(.22,1,.36,1)';
+        el.style.transform = 'translate(0,0)';
+        if (label) { label.style.transition = 'transform .5s cubic-bezier(.22,1,.36,1)'; label.style.transform = 'translate(0,0)'; }
+        setTimeout(() => { el.style.transition = ''; if (label) label.style.transition = ''; }, 500);
+      });
+    });
+  }
+
+  /* ---------- hero blob canvas (glow on dark) ---------- */
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let cw = 0, ch = 0, bmx = 0.72, bmy = 0.4, bmxT = 0.72, bmyT = 0.4;
+  const hero = document.querySelector('.hero');
+  function sizeCanvas(){
+    const r = hero.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    cw = Math.round(r.width); ch = Math.round(r.height * 1.2);
+    canvas.width = cw * dpr; canvas.height = ch * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    bmxT = (e.clientX - r.left) / r.width;
+    bmyT = (e.clientY - r.top) / r.height;
+  }, {passive:true});
+  const blobs = [
+    {c:'242,169,59',  a:.17, r:.55, sx:.31, sy:.22, px:.78, py:.30, sp:.00014, ph:0},
+    {c:'62,158,107',  a:.13, r:.48, sx:.24, sy:.28, px:.60, py:.62, sp:.00011, ph:2.1},
+    {c:'201,130,31',  a:.14, r:.40, sx:.20, sy:.16, px:.88, py:.55, sp:.00019, ph:4.2}
+  ];
+  let blobStatic = false;
+  function drawBlobs(t){
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.globalCompositeOperation = 'lighter';
+    bmx += (bmxT - bmx) * 0.04;
+    bmy += (bmyT - bmy) * 0.04;
+    for (const b of blobs) {
+      const x = cw * (b.px + b.sx * Math.sin(t * b.sp + b.ph)) + (bmx - 0.5) * 60;
+      const y = ch * (b.py + b.sy * Math.cos(t * b.sp * 1.3 + b.ph)) + (bmy - 0.5) * 40;
+      const rad = Math.min(cw, 900) * b.r;
+      const g = ctx.createRadialGradient(x, y, 0, x, y, rad);
+      g.addColorStop(0, 'rgba(' + b.c + ',' + b.a + ')');
+      g.addColorStop(1, 'rgba(' + b.c + ',0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(x - rad, y - rad, rad * 2, rad * 2);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
+  function blobFrame(){
+    if (blobStatic) return;
+    if (cur < vh * 1.3) drawBlobs(performance.now());
+  }
+  sizeCanvas();
+  if (reduced) { drawBlobs(0); blobStatic = true; }
+
+  /* ---------- hero word reveal + rotator ---------- */
+  const strikeEl = document.getElementById('strikeWord');
+  const winEl = document.getElementById('winWord');
+  const words = ['lajków','zasięgów','wyświetleń','obietnic'];
+  function startHero(){
+    heroH1.classList.add('go');
+    [...heroH1.querySelectorAll('.wi')].forEach((w, i) => w.style.transitionDelay = (i * 0.055) + 's');
+    if (reduced) {
+      strikeEl.classList.add('struck');
+      winEl.classList.add('on');
+      return;
+    }
+    let i = 0;
+    const strike = () => strikeEl.classList.add('struck');
+    const swap = () => {
+      strikeEl.classList.add('leaving');
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        strikeEl.textContent = words[i];
+        strikeEl.classList.remove('struck','leaving');
+        setTimeout(strike, 700);
+      }, 280);
+    };
+    setTimeout(strike, 1300);
+    setTimeout(() => winEl.classList.add('on'), 1800);
+    setInterval(swap, 3600);
+  }
+
+  /* ---------- intro ---------- */
+  function runIntro(){
+    if (reduced || window.scrollY > 50) {
+      intro.remove();
+      startHero();
+      return;
+    }
+    document.documentElement.classList.add('intro-lock');
+    requestAnimationFrame(() => requestAnimationFrame(() => intro.classList.add('go')));
+    setTimeout(() => {
+      intro.classList.add('leave');
+      document.documentElement.classList.remove('intro-lock');
+      startHero();
+    }, 1150);
+    setTimeout(() => intro.remove(), 2100);
+  }
+
+  /* ---------- init ---------- */
+  const trackEl = document.getElementById('tickerTrack');
+  trackEl.innerHTML += trackEl.innerHTML;
+
+  measureAll();
+  // elements already above the fold on a restored-scroll load: show instantly
+  if (window.scrollY > 50) {
+    for (let i = reveals.length - 1; i >= 0; i--) {
+      if (reveals[i].top < cur + vh) {
+        reveals[i].el.classList.add('no-anim','in');
+        const el = reveals[i].el;
+        requestAnimationFrame(() => el.classList.remove('no-anim'));
+        reveals.splice(i, 1);
+      }
+    }
+    heroH1.classList.add('no-anim','go');
+  }
+
+  addEventListener('resize', () => { sizeCanvas(); measureAll(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measureDoc(); measureAll(); });
+  addEventListener('load', () => { measureDoc(); measureAll(); });
+
+  runIntro();
+  requestAnimationFrame(raf);
+})();
+</script>
+</body>
+</html>
